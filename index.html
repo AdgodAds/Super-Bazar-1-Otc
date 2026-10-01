@@ -1,285 +1,422 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="hi">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Analytics Pro - Official Educational Platform</title>
-    
-    <!-- Meta Pixel Code -->
-    <script>
-    !function(f,b,e,v,n,t,s)
-    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
-    n.queue=[];t=b.createElement(e);t.async=!0;
-    t.src=v;s=b.getElementsByTagName(e)[0];
-    s.parentNode.insertBefore(t,s)}(window, document,'script',
-    'https://connect.facebook.net/en_US/fbevents.js');
-    
-    fbq('init', '1420808503483015');
-    fbq('track', 'PageView');
-    </script>
-    <noscript><img height="1" width="1" style="display:none"
-    src="https://www.facebook.com/tr?id=1420808503483015&ev=PageView&noscript=1"
-    /></noscript>
-    <!-- End Meta Pixel Code -->
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Supper Bazar – Online App</title>
 
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-    <style>
-        body {
-            font-family: 'Poppins', sans-serif;
-            background-color: #f4f8fb;
-            -webkit-font-smoothing: antialiased;
-        }
-        
-        .logo-container {
-            transition: transform 0.6s;
-            transform-style: preserve-3d;
-        }
-        
-        .logo-container:hover {
-            transform: rotateY(180deg);
-        }
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 
-        .logo-front, .logo-back {
-            position: absolute;
-            width: 100%;
-            height: 100%;
-            backface-visibility: hidden;
-            border-radius: 0.75rem;
-        }
+<!-- Meta Pixel Code -->
+<script>
+!function(f,b,e,v,n,t,s)
+{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];
+s.parentNode.insertBefore(t,s)}(window, document,'script',
+'https://connect.facebook.net/en_US/fbevents.js');
+fbq('init', '1115097391198831');
+fbq('track', 'PageView');
+</script>
+<noscript><img height="1" width="1" style="display:none"
+src="https://www.facebook.com/tr?id=1115097391198831&ev=PageView&noscript=1"
+/></noscript>
+<!-- End Meta Pixel Code -->
 
-        .logo-front {
-            background: linear-gradient(135deg, #0b1c2d 0%, #17334d 100%);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            border: 1px solid rgba(59, 130, 246, 0.2);
-            box-shadow: 0 4px 12px rgba(11, 28, 45, 0.2);
-        }
+<style>
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family:'Poppins',sans-serif;
+}
 
-        .logo-back {
-            background: #1d4ed8;
-            color: white;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            transform: rotateY(180deg);
-        }
+body{
+  min-height:100vh;
+  background:#04061a;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  padding:20px;
+  color:#fff;
+  overflow:hidden;
+}
 
-        .market-card {
-            transition: all 0.3s ease;
-        }
-        
-        .market-card:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.08);
-        }
+#starCanvas{
+  position:fixed;
+  inset:0;
+  z-index:0;
+}
 
-        html {
-            scroll-behavior: smooth;
-        }
-    </style>
+.card{
+  position:relative;
+  z-index:2;
+  width:100%;
+  max-width:420px;
+  background:linear-gradient(180deg,#121a4d,#0a1038);
+  border-radius:26px;
+  padding:26px 22px 22px;
+  box-shadow:0 25px 60px rgba(0,0,0,.6);
+  backdrop-filter:blur(6px);
+}
+
+.header{
+  display:flex;
+  gap:14px;
+  align-items:center;
+  margin-bottom:14px;
+}
+
+.logo{
+  width:60px;
+  height:60px;
+  border-radius:16px;
+  background:#fff;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  box-shadow:0 0 30px rgba(255,215,0,.7);
+}
+
+.logo img{
+  width:48px;
+}
+
+.header h1{
+  font-size:22px;
+  font-weight:800;
+}
+
+.header span{
+  display:block;
+  font-size:12px;
+  font-weight:600;
+  color:#ffd84d;
+}
+
+.tagline{
+  font-size:15px;
+  font-weight:600;
+  margin:14px 0 18px;
+}
+
+.features{
+  background:rgba(255,255,255,.06);
+  border-radius:18px;
+  padding:18px;
+}
+
+.features li{
+  list-style:none;
+  margin-bottom:10px;
+  font-size:14px;
+  display:flex;
+  gap:8px;
+}
+
+.features li:last-child{
+  margin-bottom:0;
+}
+
+.features li::before{
+  content:"✔";
+  color:#00ff9d;
+}
+
+.stats{
+  display:flex;
+  gap:12px;
+  margin:20px 0;
+}
+
+.stat{
+  flex:1;
+  background:rgba(255,255,255,.05);
+  border-radius:16px;
+  padding:14px;
+  text-align:center;
+}
+
+.stat h2{
+  font-size:18px;
+  font-weight:800;
+}
+
+.stat p{
+  font-size:12px;
+  opacity:.8;
+}
+
+.download a{
+  display:block;
+  text-align:center;
+  padding:18px;
+  background:linear-gradient(90deg,#00ff9d,#00d4ff);
+  color:#002018;
+  font-size:18px;
+  font-weight:800;
+  border-radius:40px;
+  text-decoration:none;
+  box-shadow:0 0 40px rgba(0,255,200,.9);
+  transition:.3s;
+}
+
+.download a:hover{
+  transform:scale(1.05);
+}
+
+.footer{
+  text-align:center;
+  font-size:12px;
+  opacity:.8;
+  margin-top:14px;
+  cursor:pointer;
+  text-decoration:underline;
+}
+
+/* SMALL TELEGRAM BUTTON */
+.ads-agency{
+  text-align:center;
+  margin-top:8px;
+}
+
+.telegram-btn{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  gap:4px;
+
+  padding:5px 11px;
+
+  background:#229ED9;
+  color:#fff;
+
+  text-decoration:none;
+  font-size:10px;
+  font-weight:600;
+
+  border-radius:20px;
+
+  box-shadow:0 2px 8px rgba(34,158,217,.25);
+
+  transition:.2s ease;
+}
+
+.telegram-btn:hover{
+  transform:translateY(-1px);
+  box-shadow:0 3px 10px rgba(34,158,217,.4);
+}
+
+.telegram-btn:active{
+  transform:scale(.96);
+}
+
+/* PRIVACY POPUP */
+#policy{
+  display:none;
+  position:fixed;
+  inset:0;
+  background:rgba(0,0,0,.7);
+  z-index:10;
+  justify-content:center;
+  align-items:center;
+  padding:20px;
+}
+
+.policy-box{
+  background:#0b113d;
+  width:100%;
+  max-width:420px;
+  padding:22px;
+  border-radius:18px;
+  font-size:13px;
+  line-height:1.6;
+}
+
+.policy-box button{
+  margin-top:12px;
+  padding:10px 18px;
+  border:none;
+  border-radius:10px;
+  background:#00ff9d;
+  font-weight:700;
+  cursor:pointer;
+}
+</style>
 </head>
-<body class="text-gray-800 pb-32">
 
-    <header class="sticky top-0 z-40 bg-white/95 backdrop-blur-md border-b border-gray-100 shadow-xs">
-        <div class="max-w-md mx-auto flex items-center justify-center py-3.5 px-4 gap-3">
-            <div class="relative w-12 h-12 logo-container cursor-pointer">
-                <div class="logo-front">
-                    <span class="text-cyan-400 font-extrabold text-[11px] tracking-tighter">M 786</span>
-                </div>
-                <div class="logo-back">
-                    <span class="font-bold text-xs">M786</span>
-                </div>
-            </div>
-            <h1 class="text-2xl font-black tracking-wider text-blue-950">Active<span class="text-blue-600 font-extrabold">786</span></h1>
-        </div>
-    </header>
+<body>
 
-    <main class="max-w-md mx-auto px-4 mt-6">
-        <div class="text-center bg-white p-6 rounded-3xl shadow-sm border border-blue-50/80">
-            <div class="inline-block bg-blue-50 text-blue-700 text-xs font-bold px-3.5 py-1.5 rounded-full mb-3 tracking-wide">
-                📚 Official Educational Platform
-            </div>
-            <h2 class="text-xl md:text-2xl font-extrabold text-gray-900 leading-snug">
-                 Official App 📊
-            </h2>
-            <p class="text-xs md:text-sm text-gray-500 mt-3 leading-relaxed">
-                Welcome to our platform! Explore academic market data, historical charts, statistical analysis tools, and structured educational guides. 🧠✨
-            </p>
+<canvas id="starCanvas"></canvas>
 
-            <div class="mt-6">
-                <!-- Track Custom Event for App Download -->
-                <a href="https://matka786.site/matka786.apk" 
-                   class="flex items-center justify-center w-full bg-gradient-to-r from-blue-600 to-blue-800 text-white font-bold py-3.5 px-6 rounded-2xl shadow-lg hover:from-blue-700 hover:to-blue-900 transition duration-300 text-sm">
-                    <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" d="M3 16.5v2.25A2.25 2.25 0 005.25 21h13.5A2.25 2.25 0 0021 18.75V16.5M16.5 12 12 16.5m0 0L7.5 12m4.5 4.5V3"/>
-                    </svg>
-                    Download Official App 📥
-                </a>
-            </div>
-        </div>
+<div class="card">
 
-        <div class="flex items-center justify-center my-7">
-            <div class="flex-grow border-t border-gray-200"></div>
-            <span class="px-4 text-gray-500 font-extrabold tracking-widest text-[11px]">📈 STATISTICAL DATA SESSIONS</span>
-            <div class="flex-grow border-t border-gray-200"></div>
-        </div>
+  <div class="header">
 
-        <div class="space-y-4">
-            
-            <div class="market-card bg-white rounded-2xl shadow-xs relative overflow-hidden border border-gray-100">
-                <div class="absolute top-0 right-0 bg-red-500 text-white text-[9px] font-bold px-6 py-1 transform rotate-45 translate-x-5 translate-y-2 shadow-xs tracking-widest z-10">CLOSED 🔴</div>
-                <div class="p-5 text-center">
-                    <h3 class="font-bold text-base text-gray-800 tracking-wide">🏛️ MORNING SESSION</h3>
-                    <div class="flex justify-between items-center mt-3 pt-3 border-t border-dashed border-gray-100 px-3">
-                        <div class="text-left">
-                            <p class="text-[10px] text-gray-400 font-semibold uppercase tracking-wider">Start Time</p>
-                            <p class="text-xs font-bold text-blue-950 mt-0.5">07:00 AM</p>
-                        </div>
-                        <div class="text-right">
-                            <p class="text-[10px] text-gray-400 font-semibold uppercase tracking-wider">End Time</p>
-                            <p class="text-xs font-bold text-blue-950 mt-0.5">03:00 PM</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="market-card bg-white rounded-2xl shadow-xs relative overflow-hidden border border-gray-100">
-                <div class="absolute top-0 right-0 bg-red-500 text-white text-[9px] font-bold px-6 py-1 transform rotate-45 translate-x-5 translate-y-2 shadow-xs tracking-widest z-10">CLOSED 🔴</div>
-                <div class="p-5 text-center">
-                    <h3 class="font-bold text-base text-gray-800 tracking-wide">⭐ AFTERNOON SESSION</h3>
-                    <div class="flex justify-between items-center mt-3 pt-3 border-t border-dashed border-gray-100 px-3">
-                        <div class="text-left">
-                            <p class="text-[10px] text-gray-400 font-semibold uppercase tracking-wider">Start Time</p>
-                            <p class="text-xs font-bold text-blue-950 mt-0.5">07:00 AM</p>
-                        </div>
-                        <div class="text-right">
-                            <p class="text-[10px] text-gray-400 font-semibold uppercase tracking-wider">End Time</p>
-                            <p class="text-xs font-bold text-blue-950 mt-0.5">04:35 PM</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="market-card bg-white rounded-2xl shadow-xs relative overflow-hidden border border-gray-100">
-                <div class="absolute top-0 right-0 bg-emerald-500 text-white text-[9px] font-bold px-6 py-1 transform rotate-45 translate-x-5 translate-y-2 shadow-xs tracking-widest z-10">OPEN 🟢</div>
-                <div class="p-5 text-center">
-                    <h3 class="font-bold text-base text-gray-800 tracking-wide">📌 EVENING SESSION</h3>
-                    <div class="flex justify-between items-center mt-3 pt-3 border-t border-dashed border-gray-100 px-3">
-                        <div class="text-left">
-                            <p class="text-[10px] text-gray-400 font-semibold uppercase tracking-wider">Start Time</p>
-                            <p class="text-xs font-bold text-blue-950 mt-0.5">07:00 AM</p>
-                        </div>
-                        <div class="text-right">
-                            <p class="text-[10px] text-gray-400 font-semibold uppercase tracking-wider">End Time</p>
-                            <p class="text-xs font-bold text-blue-950 mt-0.5">11:30 PM</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-        </div>
-
-        <div class="mt-8 bg-gray-50 border border-gray-200 p-4 rounded-2xl text-[11px] text-gray-500 leading-relaxed text-center">
-            <p class="font-bold text-gray-700 mb-1">⚖️ Educational Disclaimer & Terms</p>
-            This platform is strictly designed for **educational, statistical learning, and informational analysis** purposes only. All statistical data presented here is meant for academic study and data research.
-        </div>
-    </main>
-
-    <div class="fixed bottom-0 left-0 right-0 bg-white/95 backdrop-blur-md p-4 shadow-xl border-t border-gray-100 z-50">
-        <div class="max-w-md mx-auto">
-            <!-- Track Custom Event for Bottom App Download -->
-            <a href="https://matka786.site/matka786.apk" 
-               class="flex items-center justify-center w-full bg-gradient-to-r from-blue-600 to-blue-800 text-white font-bold py-3.5 px-6 rounded-2xl shadow-lg hover:from-blue-700 hover:to-blue-900 transition duration-300 text-base">
-                <svg class="w-5 h-5 mr-2 animate-bounce" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" d="M3 16.5v2.25A2.25 2.25 0 005.25 21h13.5A2.25 2.25 0 0021 18.75V16.5M16.5 12 12 16.5m0 0L7.5 12m4.5 4.5V3"/>
-                </svg>
-                Download App 📱
-            </a>
-        </div>
+    <div class="logo">
+      <img src="https://res.cloudinary.com/lyqqtvcr/image/upload/f_auto,q_auto/WhatsApp_Image_2026-10-01_at_11.33.23_PM" alt="786 App Logo">
     </div>
+
+    <div>
+      <h1>Super Bazar</h1>
+      <span>ENTERTAINMENT & EDUCATIONAL PLATFORM</span>
+    </div>
+
+  </div>
+
+  <div class="tagline">
+    तेज़ भुगतान • सुरक्षित सिस्टम • रियल-टाइम अपडेट
+  </div>
+
+  <ul class="features">
+    <li>24×7 System Access</li>
+    <li>Fast Result Information</li>
+    <li>User Friendly Interface</li>
+    <li>Minimum Deposit ₹100</li>
+    <li>Minimum Withdrawal ₹300</li>
+  </ul>
+
+  <div class="stats">
+
+    <div class="stat">
+      <h2>100K+</h2>
+      <p>Active Users</p>
+    </div>
+
+    <div class="stat">
+      <h2>24×7</h2>
+      <p>Support</p>
+    </div>
+
+    <div class="stat">
+      <h2>4.9★</h2>
+      <p>User Rating</p>
+    </div>
+
+  </div>
+
+  <div class="download">
+    <a href="https://superbazar.life/app/superbazar.apk"
+       onclick="fbq('track','Lead',{content_name:'Super Bazar APK'});">
+      ↓ DOWNLOAD NOW ↓
+    </a> 
+  </div>
+
+  <div class="footer" onclick="openPolicy()">
+    Privacy Policy & Terms
+  </div>
+
+  <!-- SMALL ADGOD ADS TELEGRAM BUTTON -->
+  <div class="ads-agency">
+    <a
+      href="https://t.me/+Kj7je5rRGkgwM2Rl"
+      target="_blank"
+      rel="noopener noreferrer"
+      class="telegram-btn">
+      ✈️ADS BY = ADGOD ADS
+    </a>
+  </div>
+
+</div>
+
+
+<!-- PRIVACY POLICY POPUP -->
+<div id="policy" onclick="closePolicy()">
+
+  <div class="policy-box" onclick="event.stopPropagation()">
+
+    <h3>🔐 Privacy Policy</h3>
+
+    <p>
+      **super Bazar** एक online entertainment एवं educational information platform है।
+
+यहाँ उपलब्ध सभी content का उद्देश्य केवल **educational और informational purposes** के लिए है। हम किसी भी प्रकार की **real-money gambling, betting या wagering activity** को promote, encourage या facilitate नहीं करते।
+
+हम किसी भी प्रकार की **earning या financial return की guarantee** नहीं देते। Users को किसी भी financial decision से पहले स्वयं उचित जानकारी और सावधानी बरतने की सलाह दी जाती है।
+
+हम users की privacy को महत्व देते हैं और उपलब्ध जानकारी का उपयोग platform को बेहतर बनाने तथा user experience को support करने के लिए करते हैं। किसी भी व्यक्तिगत जानकारी को बिना उचित आवश्यकता के साझा करने से बचने का प्रयास किया जाता है।
+
+    </p>
+
+    <button onclick="closePolicy()">
+      Close
+    </button>
+
+  </div>
+
+</div>
 
 
 <script>
-(function () {
-    "use strict";
+function openPolicy(){
+  document.getElementById("policy").style.display="flex";
+}
 
-    /*
-     * PageView is fired exactly once in the original Meta Pixel snippet.
-     * We do not fire PageView again here.
-     */
+function closePolicy(){
+  document.getElementById("policy").style.display="none";
+}
 
-    function trackStandard(eventName, params) {
-        if (typeof window.fbq !== "function") return false;
-        try {
-            window.fbq("track", eventName, params || {});
-            return true;
-        } catch (e) {
-            return false;
-        }
-    }
 
-    function trackCustom(eventName, params) {
-        if (typeof window.fbq !== "function") return false;
-        try {
-            window.fbq("trackCustom", eventName, params || {});
-            return true;
-        } catch (e) {
-            return false;
-        }
-    }
+/* STAR ANIMATION */
 
-    function fireViewContent() {
-        trackStandard("ViewContent", {
-            content_name: "Analytics Pro Educational Platform",
-            content_category: "Education"
-        });
-    }
+const canvas = document.getElementById("starCanvas");
+const ctx = canvas.getContext("2d");
 
-    if (document.readyState === "loading") {
-        document.addEventListener("DOMContentLoaded", fireViewContent, { once: true });
-    } else {
-        fireViewContent();
-    }
+let w,h,stars=[];
 
-    var downloadButtons = document.querySelectorAll(
-        'a[href="https://matka786.site/matka786.apk"]'
+function resize(){
+  w = canvas.width = window.innerWidth;
+  h = canvas.height = window.innerHeight;
+}
+
+resize();
+
+window.addEventListener("resize", resize);
+
+for(let i=0;i<120;i++){
+
+  stars.push({
+    x:Math.random()*w,
+    y:Math.random()*h,
+    r:Math.random()*1.5,
+    s:Math.random()*0.8+0.2
+  });
+
+}
+
+(function animate(){
+
+  ctx.clearRect(0,0,w,h);
+
+  ctx.fillStyle="rgba(255,255,255,0.8)";
+
+  stars.forEach(star=>{
+
+    ctx.beginPath();
+
+    ctx.arc(
+      star.x,
+      star.y,
+      star.r,
+      0,
+      Math.PI*2
     );
 
-    downloadButtons.forEach(function (button) {
-        var locked = false;
+    ctx.fill();
 
-        button.addEventListener("click", function () {
-            if (locked) return;
-            locked = true;
+    star.y += star.s;
 
-            /*
-             * Custom conversion event requested by the original page.
-             * It is sent before navigation. The link opens in a new tab,
-             * so the current page remains alive and the event has time to send.
-             */
-            trackCustom("AppDownload", {
-                content_name: "Official App APK",
-                content_category: "Educational App",
-                location: button.closest(".fixed") ? "sticky_footer" : "main_section"
-            });
+    if(star.y > h){
+      star.y = 0;
+      star.x = Math.random()*w;
+    }
 
-            /*
-             * Standard Meta event for conversion reporting.
-             */
-            trackStandard("Lead", {
-                content_name: "App Download Click",
-                content_category: "Educational App"
-            });
+  });
 
-            window.setTimeout(function () {
-                locked = false;
-            }, 1200);
-        });
-    });
+  requestAnimationFrame(animate);
+
 })();
 </script>
 
